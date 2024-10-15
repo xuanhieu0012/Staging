@@ -1,0 +1,19 @@
+.parallax {
+    /* Background image */
+    background-image: url('path/to/your/image.jpg'); /* This can be overridden in inline styles */
+    height: 100%; /* Height of the parallax section */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover the entire section */
+  }
+  
+  .parallax-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Centers the text vertically */
+    text-align: center;
+    color: white; /* Change text color as needed */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark overlay */
+  }

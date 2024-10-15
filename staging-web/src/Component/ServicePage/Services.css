@@ -1,0 +1,12 @@
+.service-container{
+    width: 100vw;
+}
+.service-banner{
+    width: 100vw;
+    height: 100vh;
+    img{
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+    }
+}

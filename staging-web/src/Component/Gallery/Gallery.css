@@ -1,0 +1,12 @@
+
+.gallery-container{
+    width: 100vw;
+
+}
+.gallery-front-page{
+    height: 100vh;
+}
+.gallery-content-container{
+    color: black;
+    background-color: white;
+}

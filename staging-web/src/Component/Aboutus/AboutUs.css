@@ -1,0 +1,18 @@
+.about-us-container{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+
+.about-us-image-container{
+    position: relative;
+    top: 0px;
+    height: 70vh;
+    width: inherit;
+    img {
+        height: inherit;
+        width: inherit;
+
+    }
+}

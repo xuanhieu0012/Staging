@@ -1,0 +1,69 @@
+.reasons-to-stage-container {
+    color: black;
+    display: flex;
+    justify-content: center; /* Centers the child content horizontally */
+    align-items: center; /* Centers the child content vertically */
+    flex-direction: column; /* Aligns items in a column */
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Optional: Add background color */
+  }
+  
+  .reasons-to-stage {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: center; /* Center items horizontally */
+    max-width: 80%; /* Optional: Set a max width for the container */
+  }
+  
+  .reason-item {
+    display: flex; /* Flexbox for item layout */
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+    margin: 20px; /* Space between items */
+    padding: 20px; /* Space inside each item */
+    border: 1px solid #ddd; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    width: calc(30% - 40px); /* Width of each item, adjusting for margins */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    background-color: #ebebeb;
+  }
+  
+  .reason-icon {
+    font-size: 24px; /* Adjust icon size */
+    margin-bottom: 10px; /* Space between icon and title */
+  }
+  
+  .reason-title {
+    font-size: 18px; /* Title font size */
+    margin: 10px 0; /* Space above and below title */
+  }
+  
+  .reason-description {
+    text-align: center; /* Center text */
+    font-size: 14px; /* Description font size */
+  }
+  
+  /* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .reason-item {
+      width: 50% /* Full width on small screens */
+    }
+    .reasons-to-stage-container h1{
+      font-size: 12px;
+    }
+  }
+  
+  .reason-icon {
+    font-size: 24px; /* Adjust icon size */
+    margin-bottom: 10px; /* Space between icon and title */
+  }
+  
+  .reason-title {
+    font-size: 18px; /* Title font size */
+    margin: 10px 0; /* Space above and below title */
+  }
+  
+  .reason-description {
+    text-align: center; /* Center text */
+    font-size: 14px; /* Description font size */
+  }

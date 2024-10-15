@@ -1,0 +1,168 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+
+/* The footer is fixed to the bottom of the page */
+
+footer{
+	bottom: 0;
+		
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	
+}
+
+
+.footer-container{
+	background-color: whitesmoke;
+	box-sizing: border-box;
+	width: 100%;
+	
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right{
+	display: inline-block;
+	vertical-align: top;
+	justify-content: space-evenly
+}
+
+/* Footer left */
+
+.footer-container .footer-left{
+	width: 35%;
+	
+}
+
+.footer-container h2{
+	color:  #030303;
+	font: normal 1.5em 'Cookie', cursive;
+	margin: 0;
+}
+
+.bottom-footer{
+	display: flex;
+	margin-top: 30px;
+	width: 100%;
+	justify-content: space-between;
+}
+.bottom-footer p{
+	color: grey;
+}
+.bottom-footer img{
+	width: 50vw;
+	min-width: 250px;
+	max-width: 800px;
+	object-fit: contain;;
+}
+
+.footer-container .footer-left img{
+	width: 70%;
+	min-width: 250px;
+	max-width: 400px;
+}
+
+/* Footer Center */
+.footer-center{
+	width: 35%;
+	font-size: 25px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 25px 20px 0 100px ;
+	vertical-align: middle;
+	
+}
+.footer-center h2{
+	text-align: left;
+	margin-bottom: 20px;;
+}
+.footer-center-content{
+	display: flex;
+
+}
+.footer-center-policy{
+	display: flex;
+	text-align: left;
+	flex-direction: column;
+	margin-right: 2em;
+	
+}
+.footer-center-product-link{
+	display: flex;
+	text-align: left;
+	
+	flex-direction: column;
+}
+.footer-center-product-link a, .footer-center-policy a{
+	text-decoration: none;
+}
+/* Footer right */
+.footer-right svg{
+    color: black;
+    font-size: 30px;
+    margin-right: 10px;
+
+}
+.footer-right{
+	width: 15%;
+	margin-top:25px;
+	
+}
+.footer-right h2{
+	font-size: 30px;
+	margin-bottom: 20px;
+	line-height: 42px;
+}
+
+.container-all-columns{
+	margin-bottom: 80px;
+}
+
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+	.footer-container .footer-left,
+	.footer-container .footer-center,
+	.footer-container .footer-right,
+	.footer-center-content, .bottom-footer{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-container .footer-center i{
+		margin-left: 0;
+	}
+	.footer-center-policy, 
+	.footer-center-product-link{
+		margin: 0 auto;
+		text-align: center;
+		
+	} 
+	.footer-center h2{
+		text-align: center;
+		margin-bottom:20px
+	}
+	.footer-center{
+		margin: 0 auto;
+		font-size: 20px;
+	}
+}
+@media (max-width: 1300px){
+	.footer-center{
+		
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,152 @@
+.showcase-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    height: 600px;
+  }
+  
+  /* Large background image */
+  .large-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+  
+  /* Floating image container */
+  .floating-image-container {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 500px;
+    height: 500px;
+    transform: translateY(-50%);
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Image styling */
+  .floating-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fade 4s infinite;
+  }
+  
+  /* Only the current image should have the 'visible' class */
+  .floating-image.visible {
+    animation-name: fade-in-out;
+  }
+  
+  /* Keyframe animation for smooth fade transition */
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Content Section */
+  .content-container {
+    width: 50%;
+    z-index: 3;
+    margin-left: auto;
+    text-align: left;
+    max-width: 600px;
+    color: black
+  }
+  
+  .content-container h2 {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .content-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .quote-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .quote-button:hover {
+    background-color: #3c4a44;
+  }
+  @media (max-width: 768px) {
+    .floating-image-container {
+      width: 250px;
+      height: 250px;
+      left: 5%;
+      top:23%;
+    }
+  
+    .content-container h2 {
+      font-size: 24px;
+    }
+  
+    .content-container p {
+      font-size: 14px;
+    }
+  
+    .quote-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content-container{
+        width: 100%;
+    }
+    .floating-image-container {
+        display: none;
+    }
+  
+    .content-container h2 {
+      font-size: 20px;
+    }
+  
+    .content-container p {
+      font-size: 13px;
+    }
+  
+    .quote-button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }

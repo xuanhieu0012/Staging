@@ -1,0 +1,112 @@
+.staging-service {
+    text-align: center;
+    background-color: #f7f4ef; /* Match the background color */
+    padding: 2rem;
+  }
+  
+  .staging-service h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3b2e26; /* Adjust color as needed */
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+  
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    width: 30%;
+    margin: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .service-card h2 {
+    font-size: 1.5rem;
+    color: #3b2e26;
+    margin-top: 1rem;
+  }
+  
+  .service-card p {
+    color: #5f5a55;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .quote-link {
+    text-decoration: none;
+    color: #f0a82f; /* Adjust the link color */
+    font-weight: bold;
+  }
+  
+
+  /* Responsive styles */
+@media (max-width: 1200px) {
+    .service-card {
+      width: 45%; /* Two cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-card {
+      width: 80%; /* Single column layout on smaller screens */
+    }
+    
+    .service-cards {
+        flex-wrap: wrap;
+      justify-content: center; /* Center align for small screens */
+    }
+  
+    .staging-service h1 {
+      font-size: 2rem; /* Adjust title size for smaller screens */
+    }
+  
+    .service-card h2 {
+      font-size: 1.25rem; /* Adjust card title size */
+    }
+  
+    .service-card p {
+      font-size: 0.95rem; /* Adjust paragraph size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-card {
+      width: 80%; /* Full width on mobile */
+    }
+  
+    .staging-service {
+      padding: 1rem; /* Reduce padding for mobile */
+    }
+  
+    .staging-service h1 {
+      font-size: 1.75rem; /* Smaller heading on mobile */
+    }
+  
+    .service-card h2 {
+      font-size: 1rem; /* Smaller card title */
+    }
+  
+    .service-card p {
+      font-size: 0.85rem; /* Smaller paragraph text */
+    }
+  }
