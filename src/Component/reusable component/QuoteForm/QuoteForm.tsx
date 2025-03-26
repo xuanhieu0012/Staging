@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import './QuoteForm.css'; // Import the CSS file
 import livingRoom from '../../../assets/living-room-staging.jpg'
@@ -15,7 +15,7 @@ const ContactForm =  forwardRef<HTMLDivElement>((_props,  ref) => {
 
   const [isSubmitted, setIsSubmitted] = useState(false); // Track form submission
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -23,7 +23,7 @@ const ContactForm =  forwardRef<HTMLDivElement>((_props,  ref) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     // // Send email using EmailJS

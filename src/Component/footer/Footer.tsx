@@ -1,9 +1,10 @@
-import React from "react";
+
 import "./Footer.css";
 import mainLogo from "../../assets/logo-Transparent.png";
 import { Link } from "react-router-dom";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
+import { Button } from "../reusable component/button/Button";
 
 interface FooterProps {
     scrollToForm?: () =>void
@@ -49,7 +50,14 @@ export default function Footer({scrollToForm}: FooterProps) {
             }}
           />
           </div>
-          <button onClick={scrollToForm}>Quick Service Quote</button>
+          <Button
+            title="Quick Service Quote"
+            onButtonClick={() => scrollToForm && scrollToForm()}
+            variant="primary"
+            size="small"
+            className="hero-cta"
+            showArrow={false}
+          />
         </div>
       </div>
       <div className="bottom-footer">

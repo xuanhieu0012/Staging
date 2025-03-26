@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../NavBar/NavBar";
 import aboutUsHeaderImg from "../../assets/about-us.jpg";
 import './AboutUs.css'

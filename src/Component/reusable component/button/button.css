@@ -1,14 +1,170 @@
 .cta-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.cta-button span {
+  line-height: 1;
+}
+
+.button-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.9em;
+}
+
+.cta-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+.cta-button.primary {
+  background-color: #9B8B6C;
+  color: white;
+  border: 2px solid #9B8B6C;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: #9B8B6C;
+  border: 2px solid #9B8B6C;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button.outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button.small {
+  padding: 0.5rem 1.25rem;
+  font-size: 1.25rem;
+}
+
+.cta-button.medium {
+  padding: 0.75rem 1.75rem;
+  font-size: 1.5rem;
+}
+
+.cta-button.large {
+  padding: 1rem 2rem;
+  font-size: 1.75rem;
+}
+
+.cta-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button hover effects */
+.cta-button.primary:hover {
+  background-color: #86775C;
+  border-color: #86775C;
+}
+
+.cta-button.secondary:hover {
+  background-color: #9B8B6C;
+  color: white;
+}
+
+.cta-button.outline:hover {
+  background-color: white;
+  color: #333;
+  border-color: white;
+}
+
+.cta-button.outline:hover .button-arrow {
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 1.25rem;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
   }
   
-  .cta-button:hover {
-    background-color: white;
-    color: black;
+  .cta-button.medium {
+    padding: 0.6rem 1.5rem;
+    font-size: 1.25rem;
   }
+  
+  .cta-button.large {
+    padding: 0.75rem 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  .button-arrow {
+    font-size: 0.8em;
+  }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+  .cta-button {
+    font-size: 1.1rem;
+    gap: 0.35rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .cta-button.small {
+    padding: 0.4rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .cta-button.medium {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  .cta-button.large {
+    padding: 0.6rem 1.25rem;
+    font-size: 1.25rem;
+  }
+
+  .button-arrow {
+    font-size: 0.75em;
+  }
+}
+
+/* Ensure buttons stay within viewport on very small screens */
+@media (max-width: 360px) {
+  .cta-button {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+  }
+
+  .cta-button.small {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .cta-button.medium {
+    padding: 0.4rem 0.875rem;
+    font-size: 1rem;
+  }
+
+  .cta-button.large {
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+  }
+}

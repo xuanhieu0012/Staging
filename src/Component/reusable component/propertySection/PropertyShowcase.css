@@ -94,19 +94,13 @@
   }
   
   .quote-button {
-    background-color: black;
     color: white;
-    border: none;
-    padding: 12px 24px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
     transition: background-color 0.3s;
   }
   
-  .quote-button:hover {
-    background-color: #3c4a44;
-  }
   @media (max-width: 768px) {
     .floating-image-container {
       width: 250px;

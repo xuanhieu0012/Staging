@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './ServiceOption.css'; // Create a corresponding CSS file for styling
 import interior from '../../assets/interior.jpg'
 import ocupie from '../../assets/ocupie.jpg'

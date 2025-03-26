@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './PropertyShowcase.css';
 import interior from '../../../assets/interior.jpg'
 import homeDecor from '../../../assets/home-decor.jpg'

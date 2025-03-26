@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../NavBar/NavBar";
 import Footer from "../footer/Footer";
 import ParallaxSection from "../reusable component/parallax section/ParrlaxSection";

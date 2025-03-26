@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { AiOutlineDollar } from "react-icons/ai";
 import { LuBadgePercent } from "react-icons/lu";
