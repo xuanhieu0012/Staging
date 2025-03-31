@@ -1,49 +1,54 @@
 import { useEffect, useState, useCallback, memo } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 import './Navbar.css';
 import mainLogo from '../../assets/logo-Transparent.png';
-import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger and Close Icons
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Button } from "../reusable component/button/Button.tsx";
 
-interface NavbarProps {
-  scrollToForm?: () => void;
-}
-
-const Navbar = memo(function Navbar({scrollToForm}: NavbarProps) {
+const NavBar = memo(() => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
   const location = useLocation();
 
-  const handleScroll = useCallback(() => {
-    const scrollTop = window.scrollY;
-    setIsScrolled(scrollTop > 0);
+  const toggleMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    const handleResize = () => {
+      if (window.innerWidth > 768 && isOpen) {
+        setIsOpen(false);
+      }
+    };
 
-  // Toggle mobile menu open/close
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen(prev => !prev);
-  }, []);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isOpen]);
 
   // Close menu when route changes
   useEffect(() => {
-    setIsMenuOpen(false);
+    setIsOpen(false);
   }, [location]);
 
- 
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/services', label: 'Services' },
-    { path: '/aboutus', label: 'About Us' }
+    { path: '/aboutus', label: 'About Us' },
+    { path: '/contactus', label: 'Contact Us' }
   ];
 
   return (
-    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : "navbar-transparent"}`}>
+    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : "navbar-transparent"} ${isOpen ? "menu-open" : ""}`}>
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="logo-container">
@@ -52,53 +57,55 @@ const Navbar = memo(function Navbar({scrollToForm}: NavbarProps) {
 
         {/* Desktop Navigation */}
         <div className="nav-content">
-          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
             {navLinks.map(({ path, label }) => (
               <li key={path}>
-                <Link 
+                <NavLink 
                   to={path} 
                   className={location.pathname === path ? 'active' : ''}
                   onClick={toggleMenu}
                 >
                   {label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
 
           {/* Quote Button - Always visible */}
           <div className="quote-button">
-            <Button
-              title="GET A QUOTE"
-              onButtonClick={() => scrollToForm && scrollToForm()}
-              variant="outline"
-              size="small"
-              showArrow={true}
-              className="nav-quote-button"
-            />
+            <NavLink to="/quote">
+              <Button
+                title="GET A QUOTE"
+                variant="outline"
+                size="small"
+                showArrow={true}
+                className="nav-quote-button"
+                onButtonClick={() => {}}
+              />
+            </NavLink>
           </div>
 
           {/* Hamburger Menu - Mobile only */}
           <button className="hamburger-icon" onClick={toggleMenu} aria-label="Toggle menu">
-            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Overlay */}
-      {isMenuOpen && (
+      {isOpen && (
         <div className="mobile-nav-overlay" onClick={toggleMenu}>
           <div className="mobile-nav-content" onClick={e => e.stopPropagation()}>
             <ul className="mobile-nav-links">
               {navLinks.map(({ path, label }) => (
                 <li key={path}>
-                  <Link 
+                  <NavLink 
                     to={path} 
                     className={location.pathname === path ? 'active' : ''}
                     onClick={toggleMenu}
                   >
                     {label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -109,4 +116,4 @@ const Navbar = memo(function Navbar({scrollToForm}: NavbarProps) {
   );
 });
 
-export default Navbar;
+export default NavBar;

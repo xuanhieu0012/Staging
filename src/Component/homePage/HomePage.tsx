@@ -5,7 +5,7 @@ import "./HomePage.css";
 import { Button } from "../reusable component/button/Button.tsx";
 
 // Lazy load components that are not immediately visible
-const ContactForm = React.lazy(() => import("../reusable component/QuoteForm/QuoteForm.tsx"));
+
 const ReasonsToStage = React.lazy(() => import("../listAdvantages/ReasonToList.tsx"));
 const Footer = React.lazy(() => import("../footer/Footer.tsx"));
 const PropertyShowcase = React.lazy(() => import("../reusable component/propertySection/PropertyShowcase.tsx"));
@@ -43,7 +43,7 @@ function HomePage() {
           />
         )}
         <div className="overlay"></div>
-        <Navbar scrollToForm={scrollToForm} />
+        <Navbar />
         
         <div className="hero-content">
           <h1 className="hero-title">
@@ -69,10 +69,6 @@ function HomePage() {
       
       <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
         <ReasonsToStage />
-      </Suspense>
-      
-      <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
-        <ContactForm ref={formRef}/>
       </Suspense>
       
       <Suspense fallback={<div className="loading-spinner">Loading...</div>}>

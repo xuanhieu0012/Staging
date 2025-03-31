@@ -20,7 +20,6 @@ function Services() {
               <img src={sofaLivingRoom} />
            </div>
       <StagingService scrollToForm={scrollToForm} />
-      <ContactForm ref={formRef}/>
       <Footer />
     </div>
   );

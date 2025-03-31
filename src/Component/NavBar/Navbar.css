@@ -2,22 +2,25 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 0;
 }
 
 /* Navbar when at the top */
 .navbar-transparent {
-  background: transparent;
+  background-color: transparent;
 }
 
 /* Navbar when scrolled down */
 .navbar-scrolled {
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-open {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .navbar-container {
@@ -44,7 +47,7 @@
 .nav-content {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-links {
@@ -71,7 +74,8 @@
 }
 
 .quote-button {
-  margin-left: 1.5rem;
+  margin-left: 1rem;
+  white-space: nowrap;
 }
 
 .quote-button .cta-button {
@@ -79,6 +83,7 @@
   height: 3.5rem;
   display: flex;
   align-items: center;
+  min-width: max-content;
 }
 
 .hamburger-icon {
@@ -134,7 +139,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .nav-links {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .nav-links li a {
@@ -145,11 +150,29 @@
     padding: 0.7rem 1.5rem;
     height: 3.2rem;
   }
+
+  .nav-content {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .navbar-container {
-    padding: 0 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-content {
+    gap: 0.75rem;
+  }
+
+  .quote-button {
+    margin-left: 0.5rem;
+  }
+
+  .quote-button .cta-button {
+    padding: 0.6rem 1.25rem;
+    height: 3rem;
+    font-size: 0.9rem;
   }
 
   .nav-links {
@@ -164,15 +187,6 @@
     display: block;
   }
 
-  .quote-button {
-    margin: 0 1rem;
-  }
-
-  .quote-button .cta-button {
-    padding: 0.6rem 1.25rem;
-    height: 3rem;
-  }
-  
   .logo-container {
     height: 45px;
   }
@@ -180,24 +194,25 @@
 
 @media (max-width: 480px) {
   .navbar-container {
-    padding: 0 0.75rem;
+    padding: 0.5rem;
   }
 
   .nav-content {
     gap: 0.5rem;
   }
 
+  .quote-button .cta-button {
+    padding: 0.5rem 1rem;
+    height: 2.8rem;
+    font-size: 0.85rem;
+  }
+
   .logo-container {
-    height: 40px;
+    height: 35px;
   }
 
   .hamburger-icon {
     padding: 0.25rem;
-  }
-
-  .quote-button .cta-button {
-    padding: 0.5rem 1rem;
-    height: 2.8rem;
   }
 }
 
