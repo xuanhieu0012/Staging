@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
   padding: 0.5rem 0;
@@ -24,8 +24,6 @@
 }
 
 .navbar-container {
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
@@ -64,8 +62,9 @@
   font-size: 1.5rem;
   font-weight: 500;
   transition: color 0.3s ease;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .nav-links li a:hover,
@@ -83,7 +82,9 @@
   height: 3.5rem;
   display: flex;
   align-items: center;
-  min-width: max-content;
+  min-width: auto;
+white-space: nowrap;
+
 }
 
 .hamburger-icon {

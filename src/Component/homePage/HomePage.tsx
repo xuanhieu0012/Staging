@@ -3,6 +3,7 @@ import Navbar from "../NavBar/NavBar.tsx";
 import decorVideo from "../../assets/decorVideo.mp4";
 import "./HomePage.css";
 import { Button } from "../reusable component/button/Button.tsx";
+import WhyChooseUs from "../reusable component/ButtonImage.ts/ButtonImage.tsx";
 
 // Lazy load components that are not immediately visible
 
@@ -70,7 +71,7 @@ function HomePage() {
       <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
         <ReasonsToStage />
       </Suspense>
-      
+      <WhyChooseUs />
       <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
         <Footer scrollToForm={scrollToForm}/>
       </Suspense>

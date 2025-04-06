@@ -71,7 +71,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 10%;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -106,7 +105,6 @@
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #9B8B6C;
   color: white;
   border: none;
   cursor: pointer;
@@ -129,7 +127,6 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-content {
-    padding: 0 5%;
     padding-top: 70px;
     align-items: center;
     text-align: center;

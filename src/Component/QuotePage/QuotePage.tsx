@@ -132,7 +132,7 @@ const QuotePage: React.FC = () => {
     }));
   };
 
-  const handleRoomsChange = (event: React.SyntheticEvent, newValue: string[]) => {
+  const handleRoomsChange = (_event: React.SyntheticEvent, newValue: string[]) => {
     setFormData(prev => ({
       ...prev,
       rooms: newValue
